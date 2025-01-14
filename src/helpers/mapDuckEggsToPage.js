@@ -1,7 +1,7 @@
-import React from "react";
+import { getDuckEgg, wrapperInitializer } from '@redux/store';
+import React from 'react';
 
 // redux
-import { getDuckEgg, wrapperInitializer } from "@/redux";
 
 export const mapDuckEggsToPage = (PageComponent, options = {}) => {
     const { reducers = [], modules = [] } = options;
@@ -11,15 +11,20 @@ export const mapDuckEggsToPage = (PageComponent, options = {}) => {
 
     // prepare all transformed eggs to wrap the Page component
     // https://github.com/fostyfost/redux-eggs/tree/main/packages/next#readme
-    const { wrapPage, wrapGetInitialProps } = wrapperInitializer.getPageWrapper(duckEggs);
+    const { wrapPage, wrapGetInitialProps } =
+        wrapperInitializer.getPageWrapper(duckEggs);
 
-    const WrappedPage = wrapPage((props) => React.createElement(PageComponent, props));
+    const WrappedPage = wrapPage((props) =>
+        React.createElement(PageComponent, props),
+    );
 
     // Using displayName for debugging
     WrappedPage.displayName = PageComponent.name;
 
     if (PageComponent.getInitialProps) {
-        WrappedPage.getInitialProps = wrapGetInitialProps(enhancedCtx(PageComponent.getInitialProps));
+        WrappedPage.getInitialProps = wrapGetInitialProps(
+            enhancedCtx(PageComponent.getInitialProps),
+        );
     }
 
     return {

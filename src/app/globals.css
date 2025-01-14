@@ -2,23 +2,134 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-    --foreground-rgb: 0, 0, 0;
-    --background-start-rgb: 214, 219, 220;
-    --background-end-rgb: 255, 255, 255;
+body {
+    background-color: #fff;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --foreground-rgb: 255, 255, 255;
-        --background-start-rgb: 0, 0, 0;
-        --background-end-rgb: 0, 0, 0;
+html {
+    scroll-behavior: smooth;
+    min-width: 100vh;
+}
+*:focus {
+    outline: none;
+}
+
+/* In your global CSS or Tailwind config */
+h1 {
+    @apply text-3xl; /* Sets font size to 1.875rem (Tailwind's base size) * 3 */
+}
+h2 {
+    @apply text-2xl; /* Sets font size to 1.5rem * 2 */
+}
+h3 {
+    @apply text-xl; /* Sets font size to 1.25rem */
+}
+h4 {
+    @apply text-lg; /* Sets font size to 1rem */
+}
+h5 {
+    @apply text-base; /* Inherits base font size */
+}
+h6 {
+    @apply text-sm; /* Sets font size to 0.875rem */
+}
+
+@media (min-width: 1024px) {
+    header {
+        justify-content: center !important;
     }
 }
 
-body {
-    color: rgb(var(--foreground-rgb));
-    background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+summary::after {
+    content: '';
+    width: 18px;
+    height: 10px;
+    background: url('https://uploads.sitepoint.com/wp-content/uploads/2023/10/1697699669arrow.svg')
+        no-repeat;
+    background-size: cover;
+    transition: 0.2s;
+    /* display: ; */
+}
+
+details[open] > summary::after {
+    transform: rotate(180deg);
+}
+details {
+    height: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-content: center;
+    cursor: pointer;
+    scroll-margin-top: 300px;
+}
+
+summary:hover {
+    @apply text-blue-600;
+}
+
+.divider {
+    @apply border-b border-gray-200 py-2;
+    /* margin-top: 10px;
+    margin-bottom: 10px; */
+}
+
+.divider:before {
+    height: 100px;
+}
+
+.car-card {
+    min-width: 100%;
+    min-height: 500px;
+}
+
+.car-card img {
+    width: 100%;
+    /* min-width: 200px; */
+    min-height: 200px;
+    object-fit: cover;
+    /* margin-top: 10px;
+    margin-bottom: 10px; */
+    aspect-ratio: 1;
+}
+
+summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+input {
+    @apply border-2 border-gray-200 rounded-md p-2;
+}
+
+label {
+    @apply text-gray-800;
+    cursor: pointer;
+}
+
+.dropdown-container {
+    overflow-y: scroll;
+    height: max-content;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    @apply border-t-2 border-gray-200;
+}
+
+.dropdown-container > div > label {
+    cursor: pointer;
+}
+
+.overflow-y-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.round {
+    border-radius: 100%;
+}
+
+select {
+    @apply border-2 border-gray-200 rounded-md;
 }
 
 @layer utilities {

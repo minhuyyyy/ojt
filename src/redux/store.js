@@ -1,17 +1,19 @@
-import { composeWithDevTools } from "@redux-devtools/extension";
-import { createWrapperInitializer } from "@redux-eggs/next";
-import { combineReducers } from "@reduxjs/toolkit";
-import { createStore } from "./createStore";
+import { composeWithDevTools } from '@redux-devtools/extension';
+import { createWrapperInitializer } from '@redux-eggs/next';
+import { combineReducers } from '@reduxjs/toolkit';
+import { createStore } from './createStore';
 
-const HYDRATE = "@@store/HYDRATE";
+const HYDRATE = '@@store/HYDRATE';
 
 const reducerCombiner = (reducersMap) => {
     const combinedReducer = combineReducers(reducersMap);
 
     return (state = {}, action) => {
         return combinedReducer(
-            action.type === HYDRATE && action.payload ? { ...state, ...action.payload } : state,
-            action
+            action.type === HYDRATE && action.payload
+                ? { ...state, ...action.payload }
+                : state,
+            action,
         );
     };
 };

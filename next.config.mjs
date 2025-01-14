@@ -1,22 +1,22 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    reactStrictMode: true,
-    transpilePackages: ["@redux-eggs"],
+    reactStrictMode: false,
+    transpilePackages: ['@redux-eggs'],
     redirects: () => [
         {
-            source: "/:slug(\\d+)",
-            destination: "/car/:slug",
+            source: '/:slug(\\d+)',
+            destination: '/car/:slug',
             permanent: true,
         },
     ],
     rewrites: () => [],
     headers: () => [
         {
-            source: "/",
+            source: '/',
             headers: [
                 {
-                    key: "Cache-Control",
-                    value: "no-store",
+                    key: 'Cache-Control',
+                    value: 'no-store',
                 },
             ],
         },
@@ -26,9 +26,9 @@ const nextConfig = {
     images: {
         remotePatterns: [
             {
-                protocol: "https",
-                hostname: "picsum.photos",
-                pathname: "/**/**",
+                protocol: 'https',
+                hostname: 'picsum.photos',
+                pathname: '/**/**',
             },
         ],
     },

@@ -1,0 +1,47 @@
+{
+    "compilerOptions": {
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "strict": false,
+        "downlevelIteration": true,
+        "noEmit": true,
+        "incremental": true,
+        "module": "esnext",
+        "esModuleInterop": true,
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "jsx": "preserve",
+        "plugins": [
+            {
+                "name": "next"
+            }
+        ],
+        "strictNullChecks": true,
+        "baseUrl": "./src",
+        "paths": {
+            "@components/*": ["./components/*"],
+            "@constants/*": ["./constants/*"],
+            "@contracts/*": ["./contracts/*"],
+            "@ducks/*": ["./ducks/*"],
+            "@fetchers/*": ["./fetchers/*"],
+            "@helpers/*": ["./helpers/*"],
+            "@hooks/*": ["./hooks/*"],
+            "@mocks/*": ["./mocks/*"],
+            "@pages/*": ["./pages/*"],
+            "@redux/*": ["./redux/*"],
+            "@utils/*": ["./utils/*"]
+        }
+    },
+    "include": [
+        "next-env.d.ts",
+        ".next/types/**/*.ts",
+        "**/*.ts",
+        "**/*.tsx",
+        "**/*.jsx",
+        "**/*.js",
+        "src/pages/_app.jsx"
+    ],
+    "exclude": ["node_modules"]
+}

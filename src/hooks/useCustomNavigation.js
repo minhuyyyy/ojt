@@ -1,14 +1,13 @@
-import { useRouter } from "next/router";
-import { useDispatch } from "react-redux";
+//hooks
+import { useRouter } from 'next/router';
 
 export default function useCustomNavigation() {
-    const dispatch = useDispatch();
     const router = useRouter();
 
     const navigateToPage = ({ url, query }) => {
         let customUrl = url;
 
-        if (!customUrl) customUrl = getPath("/route", { ...query }, {});
+        if (!customUrl) customUrl = getPath('/route', { ...query }, {});
 
         router.push(customUrl);
     };
@@ -17,5 +16,5 @@ export default function useCustomNavigation() {
 }
 
 const getPath = (pageName, query = {}, options = {}) => {
-    return pageName + "/";
+    return pageName + '/';
 };

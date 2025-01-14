@@ -10,27 +10,37 @@
         "lint": "next lint"
     },
     "dependencies": {
+        "@fortawesome/fontawesome": "^1.1.8",
+        "@nextui-org/react": "^2.4.6",
         "@redux-devtools/extension": "^3.3.0",
         "@redux-eggs/core": "^2.2.0",
         "@redux-eggs/next": "^2.2.0",
         "@redux-eggs/redux": "^2.2.0",
         "@redux-eggs/redux-toolkit": "^2.2.0",
-        "@reduxjs/toolkit": "^2.1.0",
+        "@reduxjs/toolkit": "^2.2.5",
+        "axios": "^1.7.2",
+        "clsx": "^2.1.1",
+        "color-namer": "^1.4.0",
         "extensible-duck": "^1.6.0",
         "immer": "^10.1.1",
         "lodash": "^4.17.21",
-        "next": "14.2.3",
+        "lucide-react": "^0.397.0",
+        "next": "14.2.4",
         "react": "^18",
         "react-dom": "^18",
         "react-intersection-observer": "^9.10.3",
         "react-redux": "^9.1.2",
         "redux": "^5.0.1",
-        "reselect": "^5.1.1"
+        "reselect": "^5.1.1",
+        "sonner": "^1.5.0"
     },
     "devDependencies": {
-        "eslint": "^8",
-        "eslint-config-next": "14.2.3",
+        "@faker-js/faker": "^8.4.1",
+        "@types/node": "^20.14.9",
+        "@types/react": "18.3.3",
+        "eslint": "^9",
+        "eslint-config-next": "14.2.4",
         "postcss": "^8",
-        "tailwindcss": "^3.4.1"
+        "tailwindcss": "^3.4.4"
     }
 }
